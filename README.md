@@ -1,12 +1,20 @@
-# Various face detection models :
-Other than body-pix ,PGN models , we applied four other models to detect the person  faces in cctv videos
+# In this folder contains face demographics models ( age and gender prediction ) :
 
-1. Opencv + Haar cascade Face Detection Model ,
-2. Dlib + HOG based face Detector,
-3. Dlib + CNN based face Detector,
-4. MTCNN Face Detector.
+it contains three ipynb notebooks ,
 
-we have two folders which are HarrCascade+Dlib(face-detector) , MTCNN 
+1.caffe-model.ipynb-- It contains implementation of two caffe model ( one is age and another one is gender ) with help of MTCNN and Harrcascade models for face detection.
 
-1. HarrCascade+Dlib folder consists implementation of Harrcascade face detection model , Hog based face Detector , CNN based face detector .
-2. MTCNN folder consists of implementation of mtcnn model.
+2.face-demographics(lower-resolution-images).ipynb -- it contains implementation of 
+
+* specify the input image path is in good resolution or hd
+* Downscale the image to 240P
+* Apply a super resolution model ( EDSR Model ) to improve the resolution of image.
+* Apply Bodypix model for getting face crops.
+* After getting face crops in an upscaled image and pick the same face crops in lower resolution image(240P).
+* Call the  betaface api , for face demographics by giving the face crops of both lower and higher resolution face crop images.
+* Betaface api returns age and gender prediction , the save the results in an image showing like the below image.
+
+3.microsoft-faceapi.ipynb -- it contains implementation of microsoft face-api 
+
+
+
